@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue-2.5.17.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-for='(val,key,index) in person'>
+            <!-- 属性名:{{key}} -->
+            <!-- 属性值:{{val}} -->
+            正在遍历的索引:{{index}}
+        </p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                person:{
+                    id:2,
+                    name:'link',
+                    age:'33'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

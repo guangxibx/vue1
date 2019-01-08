@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue-2.5.17.js"></script>
+</head>
+<body>
+    <div id="app">
+       <p> {{msg}}</p>
+       账号:<input type="text" v-model="username"><br>
+       密码:<input type="text" v-model="password" >
+    </div>
+</body>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                msg:'测试数据',
+                username:"",
+                password:""
+            }
+        })
+    </script>
+</html>

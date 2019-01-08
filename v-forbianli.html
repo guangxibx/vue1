@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./vue-2.5.17.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p v-for='(item,index) in list'>
+            遍历的索引:{{index}}
+            遍历的id:{{item.id}}
+            遍历的人名字:{{item.name}}
+        </p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                list:[
+                    {id:1,name:'马云'},
+                    {id:2,name:'马画藤'},
+                    {id:3,name:'马克思'},
+                    {id:4,name:'马冬梅'}
+                    
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue-2.5.17.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>余额:{{num1}}</p>
+        <p v-text='num2'>余额:</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                num1:200,
+                num2:300
+            }
+        })
+    </script>
+</body>
+</html>

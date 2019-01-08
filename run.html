@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue-2.5.17.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" :value="start" @click='startRun'>
+        <input type="button" :value="stop" @click='stopRun'>
+        <p>{{content}}</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                start:'开始滚动',
+                stop:'停止滚动',
+                content:'中国队加油',
+                id:null
+            },
+            methods:{
+                startRun(){
+                   if(vm.id==null){
+                        
+                        //定时器 每隔一段时间执行一次
+                        vm.id = setInterval(function(){
+                        //     //思路没执行一次都是将第一个字符放到最后去
+                            var str = vm.content;
+                            var first = str[0];//取出第一个字符
+                            var end = str.substring(1);//取出除第一个字符外的所有字符
+
+                            vm.content = end+first;//拼接字符串
+                        console.log(vm.id);
+                        
+                            
+                        },500);
+                    }
+                },
+
+                stopRun:function(){
+                    clearInterval(vm.id);//清除定时器
+                    data:{
+                        vm.id=null//将前面的vm.id清空
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

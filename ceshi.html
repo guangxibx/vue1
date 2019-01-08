@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-中的跑马灯效果</title>
+	<script src="./vue-2.5.17.js"></script>
+</head>
+<body>
+	<div id="app">
+		<input type="button" :value="start" @click="startRoll">
+		<input type="button" :value="stop" @click="stopRoll">
+		<p>{{content}}</p>
+	</div>
+</body>
+<script>
+	var vm	= new Vue({
+		el:"#app",
+		data:{
+			start:'开始跑',
+			stop:'停止跑',
+			content:"中国队加油!IG牛逼!",
+			id:null,
+		},
+		methods:{
+			startRoll:function(){
+				if (vm.id==null) {
+			// 每隔一段时间 就把第一个字符 放到最后
+			// 定时器 每隔一段时间做一次
+			// 延时器 过一段时间再做一次
+			vm.id = setInterval(function(){
+				// console.log(vm.id);
+				// 把content 中第一个字符放到最后
+				var str = vm.content;
+				// 把第一个字符取出来
+				var first = str[0];
+				// 取出除了第一个字符的剩余部分
+				var end = str.substring(1);
+				// 把滚动后的结果保存回 content数据中
+				vm.content = end + first;
+			},100)
+		}
+	},
+		stopRoll:function(){
+			clearInterval(vm.id);
+			data:{
+				vm.id=null
+			}
+		}
+	}
+});
+</script>
+</html>

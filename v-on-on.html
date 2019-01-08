@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue-2.5.17.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" :value="msg" @click='test'>
+    </div>
+    <script>
+        
+        var vm = new Vue({
+           
+            el:'#app',
+            data:{
+                msg:'按钮'
+            },
+            methods:{
+                test(){
+                    console.log(this);
+                    
+                    console.log('点击事件');
+                    console.log(this.msg);
+                    
+                }
+            }
+        });
+        
+    </script>
+</body>
+</html>
